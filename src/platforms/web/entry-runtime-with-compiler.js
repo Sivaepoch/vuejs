@@ -1,5 +1,5 @@
 /* @flow */
-
+// 当代码执行 import Vue from 'vue' 的时候,从这个入口执行代码初始化Vue.
 import config from 'core/config'
 import { warn, cached } from 'core/util/index'
 import { mark, measure } from 'core/util/perf'

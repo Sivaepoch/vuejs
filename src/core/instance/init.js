@@ -1,5 +1,5 @@
 /* @flow */
-
+// vue初始化: 合并配置,初始化生命周期,初始化事件中心,初始化渲染,初始化data,prop,computed,watcher等等
 import config from '../config'
 import { initProxy } from './proxy'
 import { initState } from './state'
@@ -66,6 +66,7 @@ export function initMixin (Vue: Class<Component>) {
     }
 
     if (vm.$options.el) {
+      // 将模板渲染成最终的DOM
       vm.$mount(vm.$options.el)
     }
   }
