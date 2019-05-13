@@ -8,7 +8,7 @@ import { devtools, inBrowser } from 'core/util/index'
 
 import {
   query,
-  mustUseProp,
+  mustUseProp, 
   isReservedTag,
   isReservedAttr,
   getTagNamespace,
@@ -34,10 +34,14 @@ extend(Vue.options.components, platformComponents)
 Vue.prototype.__patch__ = inBrowser ? patch : noop
 
 // public mount method
+// 公用的$mount方法
+// 第一个参数: el表示挂载的元素,可以是字符串或者是DOM对象
+// 第二个参数: 服务端渲染相关,浏览器环境下不需要传
 Vue.prototype.$mount = function (
   el?: string | Element,
   hydrating?: boolean
 ): Component {
+  // el如果是字符串,会调用query方法,转成DOM对象
   el = el && inBrowser ? query(el) : undefined
   return mountComponent(this, el, hydrating)
 }

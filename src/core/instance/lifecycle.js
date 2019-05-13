@@ -187,6 +187,8 @@ export function mountComponent (
     }
   } else {
     updateComponent = () => {
+      // vm._render() 生成虚拟Node
+      // vm._update 更新DOM
       vm._update(vm._render(), hydrating)
     }
   }

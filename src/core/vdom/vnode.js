@@ -1,5 +1,10 @@
 /* @flow */
-
+// 原生DOM非常庞大,消耗性能
+// VDOM用原生js描述一个DOM节点,代价要比创建一个DOM小很多
+// VDOM借鉴了snabbdom库的方法
+// 核心属性: 标签名 数据 子节点 键值等
+// 其他属性用来拓展VNode的灵活性以及实现一些特殊feature的.
+// Vnode只用来映射真实DOM的渲染 不需要包含DOM操作 所以比较轻量
 export default class VNode {
   tag: string | void;
   data: VNodeData | void;

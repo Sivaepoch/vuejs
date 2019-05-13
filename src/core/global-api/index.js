@@ -17,7 +17,7 @@ import {
   mergeOptions,
   defineReactive
 } from '../util/index'
-
+// 给Vue对象拓展全局静态方法
 export function initGlobalAPI (Vue: GlobalAPI) {
   // config
   const configDef = {}
